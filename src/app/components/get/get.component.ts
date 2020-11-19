@@ -1,7 +1,6 @@
-import { JsonPipe } from '@angular/common';
+import { DataService } from './../../data.service';
 import { TodosI } from './../../models/todos/todos.interface';
 import { Component, OnInit } from '@angular/core';
-import { DataService } from './data.service';
 
 @Component({
   selector: 'app-get',
@@ -10,7 +9,10 @@ import { DataService } from './data.service';
 })
 export class GetComponent implements OnInit {
 
+  // cuando traemos muchos datos
   todos: TodosI[] = [];
+  // cuando traemos un solo dato
+  todo: any;
   key = 200;
 
   constructor(private dataSvc: DataService) { }
@@ -20,14 +22,12 @@ export class GetComponent implements OnInit {
     this.dataSvc.GetTodos().subscribe(data => (this.todos = data));
   }
   getTodo(){
-    this.dataSvc.GetTodo(this.key).subscribe(data => (this.todos = data));
+    this.dataSvc.GetTodo(this.key).subscribe(data => (this.todo = data));
   }
 
   ngOnInit(): void {
-    // this.dataSvc.GetTodos().subscribe(data => console.log(data));
-      this.dataSvc.GetTodo(this.key).subscribe(data => console.log(data));
-    // this.dataSvc.GetTodos().subscribe(data => (this.todos = data));
-      this.dataSvc.GetTodo(this.key).subscribe(data => (this.todos = data));
+    this.getTodos();
+    // this.getTodo();
   }
 
 }

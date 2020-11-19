@@ -1,8 +1,7 @@
-import { TodosI } from './../../models/todos/todos.interface';
+import { TodosI } from './models/todos/todos.interface';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-
 
 
 @Injectable({
@@ -17,7 +16,11 @@ export class DataService {
     return this.http.get<TodosI[]>(this.urlAPI);
   }
 
-  GetTodo(id: number): Observable<TodosI[]>{
-    return this.http.get<TodosI[]>(this.urlAPI + '/' + id);
+  GetTodo(id: number): Observable<TodosI>{
+    return this.http.get<TodosI>(this.urlAPI + '/' + id);
+  }
+
+  addNewTodo(todo: TodosI): Observable<TodosI> {
+    return this.http.post<TodosI>(this.urlAPI, todo);
   }
 }
