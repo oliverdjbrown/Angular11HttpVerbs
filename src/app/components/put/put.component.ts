@@ -24,7 +24,7 @@ export class PutComponent implements OnInit {
       title: 'test',
       completed: true };
 
-    this.dataSvc.updateTodo(myTodo, this.id).subscribe(todo => {
+    this.dataSvc.updateTodo(this.id, myTodo).subscribe(todo => {
       // const indexToUpdate = this.id ? this.todos.findIndex( t => t.id === todo.id) : -1;
       // if (indexToUpdate > -1){
       //   this.todos[indexToUpdate] = todo;

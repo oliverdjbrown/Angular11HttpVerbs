@@ -24,7 +24,14 @@ export class DataService {
     return this.http.post<TodosI>(this.urlAPI, todo);
   }
 
-  updateTodo(todo: TodosI, id: string): Observable<TodosI> {
-    return this.http.put<TodosI>(this.urlAPI + '/' + id, todo);
+  updateTodo(id: string, todo: TodosI): Observable<TodosI> {
+    // return this.http.put<TodosI>(this.urlAPI + '/' + id, todo);
+    return this.http.put<TodosI>(this.urlAPI, todo);
+  }
+
+  deleteTodo(id: string): Observable<{}>{
+    // this.urlAPI = `${this.urlAPI}/${id}`;
+    return this.http.delete(this.urlAPI + '/' + id);
+    // return this.http.delete(this.urlAPI);
   }
 }
