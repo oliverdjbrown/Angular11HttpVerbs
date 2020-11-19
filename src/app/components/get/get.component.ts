@@ -18,10 +18,10 @@ export class GetComponent implements OnInit {
   constructor(private dataSvc: DataService) { }
 
 
-  getTodos(){
+  getTodos(): void {
     this.dataSvc.GetTodos().subscribe(data => (this.todos = data));
   }
-  getTodo(){
+  getTodo(): void {
     this.dataSvc.GetTodo(this.key).subscribe(data => (this.todo = data));
   }
 

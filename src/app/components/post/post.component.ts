@@ -17,7 +17,7 @@ export class PostComponent implements OnInit {
     this.dataSvc.GetTodos().subscribe(data => (this.todos = data));
   }
 
-  saveNew(){
+  saveNew(): void {
     const newTodo = {
       userId: '1',
       id: '201',

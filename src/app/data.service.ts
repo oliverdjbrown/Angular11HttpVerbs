@@ -23,4 +23,8 @@ export class DataService {
   addNewTodo(todo: TodosI): Observable<TodosI> {
     return this.http.post<TodosI>(this.urlAPI, todo);
   }
+
+  updateTodo(todo: TodosI, id: string): Observable<TodosI> {
+    return this.http.put<TodosI>(this.urlAPI + '/' + id, todo);
+  }
 }
