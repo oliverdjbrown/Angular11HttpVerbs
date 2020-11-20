@@ -1,5 +1,22 @@
-<app-delete></app-delete>
-<!-- <app-put></app-put> -->
-<!-- <app-post></app-post> -->
-<!-- <app-get></app-get> -->
+<div class="container">
+  <mat-tab-group>
+    <mat-tab label="HTTP-GET">
+      <h1>HTTP-GET</h1>
+        <app-get></app-get>
+    </mat-tab>
+    <mat-tab label="HTTP-POST">
+      <h1>HTTP-POST</h1>
+      <app-post></app-post>
+    </mat-tab>
+    <mat-tab label="HTTP-PUT">
+      <h1>HTTP-PUT</h1>
+      <app-put></app-put>
+    </mat-tab>
+    <mat-tab label="HTTP-DELETE">
+      <h1>HTTP-DELETE</h1>
+      <app-delete></app-delete>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
 <!-- <router-outlet></router-outlet> -->

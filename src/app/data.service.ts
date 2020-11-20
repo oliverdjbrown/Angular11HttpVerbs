@@ -25,8 +25,8 @@ export class DataService {
   }
 
   updateTodo(id: string, todo: TodosI): Observable<TodosI> {
-    // return this.http.put<TodosI>(this.urlAPI + '/' + id, todo);
-    return this.http.put<TodosI>(this.urlAPI, todo);
+    return this.http.put<TodosI>(this.urlAPI + '/' + id, todo);
+    // return this.http.put<TodosI>(this.urlAPI, todo);
   }
 
   deleteTodo(id: string): Observable<{}>{
