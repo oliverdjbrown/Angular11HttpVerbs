@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostComponent } from './components/post/post.component';
 import { PutComponent } from './components/put/put.component';
 import { DeleteComponent } from './components/delete/delete.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DeleteComponent } from './components/delete/delete.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
